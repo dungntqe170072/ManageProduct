@@ -1,6 +1,5 @@
 package Views;
 
-import Views.Components.Menu;
 import Views.Components.Table;
 
 public class PrintPage extends Page {
