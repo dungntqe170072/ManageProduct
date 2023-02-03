@@ -7,14 +7,14 @@ public class Product implements Serializable, Comparable<Product> {
 
      private int id;
      private String name;
-     private Integer unitPrice;
+     private Double unitPrice;
      private Integer quantity;
      private boolean status;
 
      public Product() {
      }
 
-     public Product(int id, String name, Integer unitPrice, Integer quantity, Boolean status) {
+     public Product(int id, String name, Double unitPrice, Integer quantity, Boolean status) {
           this.id = id;
           this.name = name;
           this.unitPrice = unitPrice;
@@ -38,11 +38,11 @@ public class Product implements Serializable, Comparable<Product> {
           this.name = name;
      }
 
-     public Integer getUnitPrice() {
+     public Double getUnitPrice() {
           return unitPrice;
      }
 
-     public void setUnitPrice(int unitPrice) {
+     public void setUnitPrice(double unitPrice) {
           this.unitPrice = unitPrice;
      }
 

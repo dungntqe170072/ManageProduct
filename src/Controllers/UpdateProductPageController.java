@@ -19,7 +19,7 @@ public class UpdateProductPageController extends PageController {
                                    Integer.parseInt(args.get("ID")),
                                    args.get("Name").length() != 0 ? args.get("Name") : null,
                                    args.get("Unit Price").length() != 0
-                                             ? Integer.parseInt(args.get("Unit Price"))
+                                             ? Double.parseDouble(args.get("Unit Price"))
                                              : null,
                                    args.get("Quantity").length() != 0
                                              ? Integer.parseInt(args.get("Quantity"))

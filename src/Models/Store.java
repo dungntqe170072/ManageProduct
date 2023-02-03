@@ -13,7 +13,7 @@ public class Store {
           products = new DaoProduct();
      }
 
-     public void create(int id, String name, int price, int quantity, String status) {
+     public void create(int id, String name, double price, int quantity, String status) {
           if (!products.getAll().stream().filter(p -> p.getId() == id).findFirst().isPresent()) {
                if (name.indexOf(' ') != -1 || name.length() < 5)
                     throw new RuntimeException("Name is Invalid!");
@@ -21,13 +21,14 @@ public class Store {
                     throw new RuntimeException("Price is Invalid!");
                if (!(0 <= quantity && quantity <= 1000))
                     throw new RuntimeException("Quantity is Invalid!");
-               if (!status.equalsIgnoreCase("available") && !status.equalsIgnoreCase("not available"))
+               if (status == null
+                         || (!status.equalsIgnoreCase("available") && !status.equalsIgnoreCase("not available")))
                     throw new RuntimeException("Status is Invalid!");
                products.create(new Product(id, name, price, quantity, status.equalsIgnoreCase("available")));
           }
      }
 
-     public void update(int id, String name, Integer price, Integer quantity, String status) {
+     public void update(int id, String name, Double price, Integer quantity, String status) {
           if (name.indexOf(' ') != -1 || name.length() < 5)
                throw new RuntimeException("Name is Invalid!");
           if (!(0 <= price && price <= 10000))

@@ -16,9 +16,9 @@ public class CreatePageController extends PageController {
                     store.create(
                               Integer.parseInt(args.get("ID")),
                               args.get("Name"),
-                              Integer.parseInt(args.get("Unit Price")),
+                              Double.parseDouble(args.get("Unit Price")),
                               Integer.parseInt(args.get("Quantity")),
-                              args.get("Status"));
+                              args.get("Status(available/not available)"));
                     message = new Message("Success", "Create product successfuly!");
                } catch (Exception e) {
                     message = new Message("Error", e.getMessage());

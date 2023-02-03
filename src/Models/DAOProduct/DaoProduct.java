@@ -41,9 +41,6 @@ public class DaoProduct implements IDataAccessObject<Product> {
      @Override
      public List<Product> getAll() {
           load();
-          if (products.isEmpty() && products != null) {
-               throw new RuntimeException("Don't have any product");
-          }
           return products;
      }
 
@@ -60,8 +57,7 @@ public class DaoProduct implements IDataAccessObject<Product> {
                     products = (List<Product>) ois.readObject();
                }
           } catch (IOException e) {
-               // products = new ArrayList<>();
-               e.printStackTrace();
+               products = new ArrayList<>();
           } catch (ClassNotFoundException e) {
                e.printStackTrace();
           }
