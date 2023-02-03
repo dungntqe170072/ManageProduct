@@ -19,7 +19,7 @@ public class CreatePage extends Page {
                     "Name",
                     "Unit Price",
                     "Quantity",
-                    "Status"
+                    "Status(available/not available)"
           };
           Form form = new Form(choses, args);
           form.display();
